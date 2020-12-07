@@ -1,0 +1,30 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: EVXToken
+    network: mainnet
+    source:
+      address: "0xf3Db5Fa2C66B7aF3Eb0C0b782510816cbe4813b8"
+      abi: EVXToken
+      startBlock: 4322300
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - Approval
+        - Transfer
+      abis:
+        - name: EVXToken
+          file: EVXToken\abis\EVXToken.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: EVXToken\EVXToken.wasm
