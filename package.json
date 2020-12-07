@@ -1,0 +1,16 @@
+{
+  "name": "everex",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ heroleft/everex",
+    "create-local": "graph create --node http://localhost:8020/ heroleft/everex",
+    "remove-local": "graph remove --node http://localhost:8020/ heroleft/everex",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 heroleft/everex"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.19.0",
+    "@graphprotocol/graph-ts": "0.19.0"
+  }
+}
