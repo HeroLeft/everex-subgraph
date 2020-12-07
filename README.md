@@ -1,1 +1,1 @@
-# everex-subgraph
+# data from Everex Token Contract
